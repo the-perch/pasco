@@ -5,7 +5,10 @@ services:
       context: ..
       dockerfile: docker/Dockerfile
     command: gulp
+    ports:
+      - '127.0.0.1:3000:3000'
+      - '127.0.0.1:3001:3001'
     user: node:node
     volumes:
       - "..:/usr/local/code"
-      - "/usr/local/node_modules"
+      - "/usr/local/code/node_modules"
