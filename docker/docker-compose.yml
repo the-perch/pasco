@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  gulp:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: gulp
+    user: node:node
+    volumes:
+      - "..:/usr/local/code"
+      - "/usr/local/node_modules"
