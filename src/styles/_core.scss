@@ -1,0 +1,15 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #707070;
+}
+
+.section {
+  &--top-panel {
+    background-color: #191919;
+  }
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}

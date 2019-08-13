@@ -1,0 +1,29 @@
+.menu {
+
+  &__items {
+    display: flex;
+
+    & .menu__items {
+      display: none;
+    }
+  }
+
+  &__item-link {
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+  }
+
+  &__item {
+    padding-bottom: 17px;
+    margin: 0 10px;
+
+    &--active {
+      border-bottom: 4px solid #ff4081;
+    }
+  }
+
+}

@@ -25,6 +25,11 @@ function isLive() {
   return process.env.NODE_ENV === 'live';
 }
 
+function getStaticUrl(url = '') {
+    const baseUrl = process.env.STATIC_URL || '/assets';
+    return `${baseUrl}${url}`
+}
+
 function html() {
     return src(htmlFiles)
         .pipe(
@@ -33,7 +38,8 @@ function html() {
                 // basepath: '@file',
                 basepath: './src',
                 context: {
-                    staticUrl: process.env.STATIC_URL || '/assets',
+                    staticUrl: getStaticUrl(),
+                    svgSpriteUrl: getStaticUrl('/svg/sprites/'),
                     title: 'Default page title',
                 },
             })
@@ -48,7 +54,7 @@ function html() {
 function scss() {
   return src(scssFiles, { sourcemaps: !isLive() })
     .pipe(
-        sass().on('error', sass.logError)
+        sass({includePaths: ['node_modules']}).on('error', sass.logError)
     )
     .pipe(autoprefixer())
     .pipe(
@@ -99,6 +105,11 @@ function image() {
         .pipe(browserSync.stream());
 }
 
+function fontawesome() {
+    return src('./node_modules/@fortawesome/fontawesome-free/sprites/*.svg')
+        .pipe(dest('./dist/assets/svg/sprites/'));
+}
+
 function javascript() {
     return src(javascriptFiles)
         .pipe(
@@ -130,6 +141,7 @@ const build = series(
     clean,
     parallel(
         series(sprite, scss),
+        fontawesome,
         html,
         image,
         javascript,
