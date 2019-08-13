@@ -1,0 +1,65 @@
+.top-panel {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+
+  &__profile {
+    display: flex;
+
+    & > :last-child {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    & > * {
+      border-right: 1px solid #ffffff;
+      padding: 0 15px;
+      opacity: 0.5;
+    }
+  }
+
+  &__profile-svg {
+    width: 32px;
+    height: 16px;
+    fill: #ffffff;
+    opacity: 0.5;
+    margin: 0 0 0 -8px;
+  }
+
+  &__profile-sign-in {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+    opacity: 0.5;
+    letter-spacing: 0.8px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__lang-switcher {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__lang-switcher-svg {
+    width: 32px;
+    height: 16px;
+    fill: #ffffff;
+    opacity: 0.5;
+    margin: 0 0 0 -8px;
+  }
+}
+
+.social-networks {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+
+  &__item-svg {
+    width: 32px;
+    height: 16px;
+    fill: #707070;
+    margin: 0 -8px;
+  }
+}
