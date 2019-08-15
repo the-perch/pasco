@@ -1,6 +1,43 @@
 <div class="header">
-    <div class="container">
-        <div class="header_menu">
+    <div class="header__slider" data-js="header-slider">
+        @@for (var i = 0; i < 3; i++) {
+            <div class="header__slider-item">
+                <img class="header__slider-item-img" src="@@staticUrl/img/slide.png" alt="Slide 1">
+                <div class="container">
+                    <div class="header-content">
+                        <div class="header-content__category">inspiration</div>
+                        <div class="header-content__title">
+                            5 Ways milllennials can start building their future today
+                        </div>
+                        <a href="#" class="button button--radius button--secondary button--large">read more</a>
+                        <img class="header-content__author-photo" src="@@staticUrl/img/author.png" alt="Author name"/>
+                        <div class="header-content__author-name">Henry Little</div>
+                        <div class="header-content__published">Apri 28, 2016 10:15</div>
+                        <div class="header-content__info">
+                            <div class="header-content__info-content">
+                                <svg class="header-content__info-svg">
+                                    <use xlink:href="@@svgSpriteUrl/solid.svg#comments"></use>
+                                </svg>
+                                <div class="header-content__info-count">
+                                    Comments (28)
+                                </div>
+                            </div>
+                            <div class="header-content__info-content">
+                                <svg class="header-content__info-svg">
+                                    <use xlink:href="@@svgSpriteUrl/regular.svg#heart"></use>
+                                </svg>
+                                <div class="header-content__info-count">
+                                    Likes (07)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="container container--absolute">
+        <div class="header__menu">
             <div class="header__logo">
                 <a href="#" class="header__logo-link">
                     <img src="@@staticUrl/img/logo.webp" alt="Pasco" class="header__logo_img">
@@ -38,6 +75,25 @@
                         <a href="#" class="menu__item-link">Feature</a>
                     </li>
                 </ul>
+            </div>
+            <div class="header__actions">
+                <div class="actions">
+                    <button class="actions__item">
+                        <svg class="actions__item-svg">
+                            <use xlink:href="@@svgSpriteUrl/solid.svg#search"></use>
+                        </svg>
+                    </button>
+                    <button class="actions__item">
+                        <svg class="actions__item-svg">
+                            <use xlink:href="@@svgSpriteUrl/regular.svg#heart"></use>
+                        </svg>
+                    </button>
+                    <button class="actions__item">
+                        <svg class="actions__item-svg">
+                            <use xlink:href="@@svgSpriteUrl/solid.svg#shopping-cart"></use>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

@@ -39,7 +39,7 @@ function html() {
                 basepath: './src',
                 context: {
                     staticUrl: getStaticUrl(),
-                    svgSpriteUrl: getStaticUrl('/svg/sprites/'),
+                    svgSpriteUrl: getStaticUrl('/fontawesome/sprites/'),
                     title: 'Default page title',
                 },
             })
@@ -107,7 +107,12 @@ function image() {
 
 function fontawesome() {
     return src('./node_modules/@fortawesome/fontawesome-free/sprites/*.svg')
-        .pipe(dest('./dist/assets/svg/sprites/'));
+        .pipe(dest('./dist/assets/fontawesome/sprites/'));
+}
+
+function fontawesomeSvgs() {
+    return src('./node_modules/@fortawesome/fontawesome-free/svgs/*/*.svg')
+        .pipe(dest('./dist/assets/fontawesome/'));
 }
 
 function javascript() {
@@ -142,6 +147,7 @@ const build = series(
     parallel(
         series(sprite, scss),
         fontawesome,
+        fontawesomeSvgs,
         html,
         image,
         javascript,

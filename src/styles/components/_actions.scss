@@ -1,0 +1,22 @@
+.actions {
+    display: flex;
+
+    &__item {
+        padding: 5px 15px;
+
+        &:not(:last-child) {
+            border-right: 1px solid #b4b4b4;
+        }
+
+        &:hover &-svg {
+            fill: #ff4081;
+        }
+
+    }
+
+    &__item-svg {
+        width: 20px;
+        height: 20px;
+        fill: #ffffff;
+    }
+}
