@@ -1,4 +1,5 @@
 .menu {
+  padding-left: 100px;
 
   &__items {
     display: flex;
@@ -15,6 +16,10 @@
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.7px;
+
+    &:hover {
+       color: #ff4081;
+    }
   }
 
   &__item {

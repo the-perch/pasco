@@ -1,0 +1,20 @@
+.button {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline-block;
+
+    &--radius {
+        border-radius: 22px;
+    }
+
+    &--secondary {
+        background-color: #303f9f;
+        box-shadow: 0 17px 24px rgba(48, 63, 159, 0.2);
+    }
+
+    &--large {
+        font-size: 18px;
+        padding: 11px 28px;
+    }
+}
